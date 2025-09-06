@@ -9,3 +9,118 @@
 a {
     text-decoration: none;
 }
+
+body {
+    background: #131313;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center a {
+    position: relative;
+    border: 3px solid #ccc;
+    font-size: 30px;
+    width: 360px;
+    height: 80px;
+    line-height: 80px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    transition: color 0.4s ease-in-out;
+}
+
+.center a::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 3px solid transparent;
+}
+
+.center a:hover {
+    color: orangered;
+    transition-delay: 2s;
+}
+
+.center a:hover::before {
+    animation: animate 1s linear forwards;
+}
+
+@keyframes animate {
+    0% {
+        width: 0;
+        height: 0;
+        border-top-color: orangered;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    50% {
+        width: 100%;
+        height: 0;
+        border-top-color: orangered;
+        border-right-color: orangered;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        border-top-color: orangered;
+        border-right-color: orangered;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+}
+
+.center a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 3px solid transparent;
+}
+
+.center a:hover::after {
+    animation: animate2 1s linear forwards;
+    animation-delay: 1s;
+}
+
+@keyframes animate2 {
+    0% {
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: orangered;
+        border-left-color: transparent;
+    }
+    50% {
+        width: 100%;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: orangered;
+        border-left-color: orangered;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: orangered;
+        border-left-color: orangered;
+    }
+}
